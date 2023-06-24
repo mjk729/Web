@@ -22,14 +22,33 @@
 	
 	<!--  2번 -->
 	<% List<String> scoreList = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"}); 
-	String wrong = "X";
 	
+	int score = 100;
 	for(int i=0;i<scoreList.size();i++){
-		if(wrong.equals(scoreList)){
-			
+		if(scoreList.get(i).equals("X")){
+			score -= 10;
 		}
 	}
 	%>
+	<h2>채점 결과는 <%= score %>입니다.</h2>
+	
+	
+	<!--  3번 -->
+	
+	<%! 
+		public int getSum(int a){
+		int sum2 = 0;
+		for(int i = 1; i < (a+1) ; i++){
+			sum2 += i;
+		}
+		return sum2;
+	}
+	%>
+	
+	<h2>1에서 50까지의 합은 <%= getSum(50) %>입니다.</h2>
+	
+	<!--  4번 -->
+	
 	
 	
 </body>
