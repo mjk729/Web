@@ -49,7 +49,15 @@
 	
 	<!--  4번 -->
 	
+	<% String birthDay = "20010820";
+		int year = Integer.parseInt(birthDay.substring(0, 4));
+	%>
 	
+	<%! public int getAge(int b){
+		return 2023 - b + 1;
+	} %>
+	
+	<h2><%= birthDay %> 의 나이는 <%= getAge(year) %>입니다.</h2>
 	
 </body>
 </html>
