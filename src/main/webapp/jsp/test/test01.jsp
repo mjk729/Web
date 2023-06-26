@@ -16,13 +16,21 @@
 	for(int i =0;i<scores.length;i++){
 			sum += scores[i];
 		}
-		avg = sum / scores.length;
+		avg = sum / (double)scores.length;
 		%>
 	<h2>점수 평균은 <%= avg %>입니다.</h2>
 	
 	<!--  2번 -->
 	<% List<String> scoreList = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"}); 
 	
+	/*	향상된 for문 사용
+		int total = 0;
+		for(String ox : scoreList){
+		if(ox.equals("O")){
+		total += 100 / scoreList.size();	
+		}
+	}
+	*/
 	int score = 100;
 	for(int i=0;i<scoreList.size();i++){
 		if(scoreList.get(i).equals("X")){
@@ -57,7 +65,7 @@
 		return 2023 - b + 1;
 	} %>
 	
-	<h2><%= birthDay %> 의 나이는 <%= getAge(year) %>입니다.</h2>
+	<h2><%= birthDay %>의 나이는 <%= getAge(year) %>입니다.</h2>
 	
 </body>
 </html>
