@@ -33,12 +33,12 @@
     list.add(map);
     
 	String menu = request.getParameter("menu");
-	
+	String check = request.getParameter("check");
 	%>
 	
 	<div class="container">
 	<h1 class="text-center"><b>검색 결과</b></h1>
-	<div>
+	
 	<table class="table text-center" >
 	<thead>
 	<tr>
@@ -52,12 +52,14 @@
 	<% for(Map<String,Object> store : list){ 
 
 		// 메뉴명이 일치하는지
-		if(store.get("menu").equals(menu)){
+		if(menu.equals(store.get("menu"))){
 			
 		
 		// 별점이 4.0 이상인지
 		// down casting
 		double point = (double)store.get("point");
+		if(check == null || (check.equals("lower") && point >= 4.0)){
+		
 	%>
 	<tr>
 		<td ><%= store.get("menu") %></td>
@@ -66,11 +68,12 @@
 	</tr>
 	<% 		}
 		} 
+	}
 	%>
 	</tbody>
 	</table>
 	</div>
-	</div>
+	
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
