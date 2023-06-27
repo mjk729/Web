@@ -12,14 +12,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="ml-3">
-			<b>사칙 연산</b>
-		</h1>
+		<h1 class="ml-3">길이 변환</h1>
 		<form action="/jsp/test/test05_result.jsp" method="post">
 			<div class="d-flex col-3 align-items-end">
-				<input type="text" class="form-control" name="num">
-				<lable class="ml-3">
-				<b>cm</b></lable>
+				<input type="text" class="form-control" name="num">cm
+				
 			</div>
 			<div class="d-flex col-3 align-items-end">
 				<label><b>인치</b><input type="checkbox" name="unit"value="inch"></label> 
@@ -27,7 +24,7 @@
 				<label class="ml-2"><b>피트</b><input type="checkbox" name="unit" value="feet"></label> 
 				<label class="ml-2"><b>미터</b><input type="checkbox" name="unit" value="meter"></label>
 			</div>
-			<button type="submit" class="btn btn-success ml-3">변환</button>
+			<button type="submit" class="btn btn-primary ml-3">변환</button>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

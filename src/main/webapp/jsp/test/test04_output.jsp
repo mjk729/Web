@@ -25,16 +25,20 @@
 		symbol2 = "-";
 		result = num1 - num2;		
 	}else if(symbol1.equals("mul")){
-		symbol2 = "*";
+		symbol2 = "X";
 		result = num1 * num2;
 	}else{
 		symbol2 = "/";
-		result = num1 / num2;
+		result = num1 /(double)num2;
 	}
 	%>
 	
+	<div class="container">
 	<h1>계산 결과</h1>
-	<div Class="display-4"><%= num1 %> <%=symbol2 %> <%= num2 %> = <span class="text-info"><%= result %></span></div>
+	<div class="display-4">
+	<%= num1 %> <%=symbol2 %> <%= num2 %> = <span class="text-primary"><%= result %></span>
+	</div>
+	</div>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

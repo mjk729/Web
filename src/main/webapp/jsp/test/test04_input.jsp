@@ -14,15 +14,15 @@
 	<div class="container">
 	<h1><b>사칙 연산</b></h1>
 	<form action="/jsp/test/test04_output.jsp" method="post">
-	<div class="d-flex col-6 align-items-stretch">
+	<div class="d-flex col-6">
 		<input type="text" class="form-control" name="num1">
-		<select name="symbol" class="form-select form-select-lg ml-3">
+		<select name="symbol" class="form-control col-2 ml-2">
 		<option value="sum">+</option>
 		<option value="sub">-</option>
 		<option value="mul">X</option>
 		<option value="div">/</option>
 	</select>
-		<input type="text" class="form-control ml-3" name="num2">
+		<input type="text" class="form-control ml-2" name="num2">
 		<button type="submit" class="btn btn-success ml-3">계산</button>
 	</div>
 	</form>
