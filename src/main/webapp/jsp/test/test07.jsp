@@ -52,22 +52,32 @@
 	<% for(Map<String,Object> store : list){ 
 
 		// 메뉴명이 일치하는지
-		if(menu.equals(store.get("menu"))){
+		//if(menu.equals(store.get("menu"))){
 			
 		
 		// 별점이 4.0 이상인지
 		// down casting
 		double point = (double)store.get("point");
-		if(check == null || (check.equals("lower") && point >= 4.0)){
+		//if(check == null || (check.equals("lower") && point >= 4.0)){
 		
+		// 메뉴명이 일치하지 않으면, 아래 태그 포함하지 말아라
+		if(!menu.equals(store.get("menu"))){
+			continue;	
+		}
+		
+		// check가 체크가 된상태, 4.0미만
+		if(check != null && point < 4.0){
+			continue;
+		}
+			
 	%>
 	<tr>
 		<td ><%= store.get("menu") %></td>
 		<td ><%= store.get("name") %></td>
 		<td ><%= store.get("point") %></td>
 	</tr>
-	<% 		}
-		} 
+	<% 	//	}
+	//	} 
 	}
 	%>
 	</tbody>
