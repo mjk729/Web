@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header class="d-flex justify-content-center">
-		<h1 class="d-flex align-items-center text-danger">SK broadband IPTV</h1>
-	</header>
+<footer>
+			<div class="small text-secondary text-dark">Copyright @ 2021. morandal All Rights Reserved.</div>
+		</footer>
 </body>
 </html>

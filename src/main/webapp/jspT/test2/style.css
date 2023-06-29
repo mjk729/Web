@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+#wrap{
+	width:1200px;
+	margin:auto;
+	height:800px;
+
+}
+
+header{
+	height:100px;
+}
+
+header > .logo{
+	width:200px;
+	height:100px;
+}
+header > .search{
+	width: 1200px;
+	height: 100px;
+}
+
+.main-menu{
+	height:50px;
+	
+}
+
+.main-content{
+	height: 500px;
+}
+
+footer{
+	height:100px;
+}

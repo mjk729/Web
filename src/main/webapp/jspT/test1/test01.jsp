@@ -56,7 +56,8 @@
     list.add(map);
     map = new HashMap<String, String>() {{ put("ch", "121"); put("name", "KBSN 스포츠"); put("category", "스포츠"); } };
     list.add(map);
-    String type = request.getParameter("category");
+    
+    String category = request.getParameter("category");
 %>
 	
 	
@@ -73,10 +74,10 @@
 					<th>카테고리</th>
 					</tr>
 				</thead>
-				
 				<tbody>
 					<% for(Map<String,String> tv : list){
-						if((type != null && type.equals(tv.get("category"))) || type == null){
+						String targetCategory = tv.get("category");
+						if(category == null || targetCategory.equals(category)){
 					%>
 						<tr>
 						<td ><%= tv.get("ch") %></td>
