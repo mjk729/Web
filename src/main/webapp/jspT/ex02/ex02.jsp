@@ -15,9 +15,9 @@
 
 	<div id="wrap">
 		<jsp:include page="header.jsp"/>
-		<jsp:include page="nav.jsp"/>
-		<section class="main-content bg-primary" >
-			<img alt="snail" width="70%" src="https://cdn.pixabay.com/photo/2023/05/07/16/06/snail-7976692_1280.jpg">
+		<jsp:include page="menu.jsp"/>
+		<section class="main-content" >
+			<img alt="snail" width="60%" src="https://cdn.pixabay.com/photo/2023/05/07/16/06/snail-7976692_1280.jpg">
 		</section>
 		<jsp:include page="footer.jsp"/>
 		

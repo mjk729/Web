@@ -3,6 +3,7 @@
 #wrap{
 	width:1200px;
 	margin:auto;
+	font-weight: bold;
 }
 
 header{
@@ -11,7 +12,13 @@ header{
 
 .main-menu{
 	height:40px;
+	
 }
+.nav-item {
+    flex: 1;
+    text-align: center;
+  }
+
 footer{
 	height:70px;
 }
