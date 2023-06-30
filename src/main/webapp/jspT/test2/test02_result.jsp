@@ -94,6 +94,12 @@
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
     
+    String idString = request.getParameter("id");
+    int id = 0;
+    if(idString != null){
+    	id = Integer.parseInt(idString);
+    }
+   
     String title = request.getParameter("title");
 %>
 
@@ -109,21 +115,32 @@
 			<div class="singer d-flex border border-success p-3">
 			<% 
 			for(Map<String, Object> music: musicList) {
-				String targetTitle = (String)music.get("title");
-				if(title.equals(targetTitle)){
+				// id 파라미터가 전달되었고, id가 일치하면 title 파라마터가 전달되었고, title이 일치하면
+				// title 파라미터가 전달되었고, title의 일치하면
+				
+				int targetId = (int)music.get("id");
+				
+				int time = (Integer)music.get("time");
+				int minute = time / 60;
+				int second = time % 60;
+				
+				if((idString != null && id == targetId) || (title!= null && title.equals(music.get("title")))) 
+				{
+				
 			%>
-				<div><img alt="썸네일" src="<%= music.get("thumbnail") %>" width="150" ></div>
+				<div><img alt="<%= music.get("title")%>" src="<%= music.get("thumbnail") %>" width="150" ></div>
 				<div class="ml-3">
-				<h2><%= music.get("title")%></h2>
+				<div class="display-4"><%= music.get("title")%></div>
 				<div class="text-success font-weight-bold"><%= music.get("singer")%></div>
 					<div class="text-muted mt-3" style="font-size:x-small;">
 						<div>앨범	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("album")%></div>
-						<div>재생 시간	&nbsp;&nbsp;&nbsp;<%= music.get("time")%></div>
+						<div>재생 시간	&nbsp;&nbsp;&nbsp;<%= minute%>:<%= second %></div>
 						<div>작곡가&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("composer")%></div>
 						<div>작사가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<%= music.get("lyricist")%></div>
 					</div>
 				</div>
 			</div>
+			<%} }%>
 				<div class="music mt-4">
 			<h3 class="font-weight-bold">가사</h3>
 			<table class="table table-sm text-left">
@@ -136,7 +153,6 @@
 				</tbody>
 			</table>
 			</div>
-			<%} }%>
 		</section>
 		<jsp:include page="footer.jsp"/>
 	</div>

@@ -9,7 +9,7 @@
 <body>
 <header class="d-flex">
 		<div class="logo d-flex align-items-center">
-		<h1 class="text-success">Melong</h1>
+			<h1 class="text-success">Melong</h1>
 		</div>
 		<div class="search d-flex align-items-center mt-2">
 		<form action="/jspT/test2/test02_result.jsp" method="post">

@@ -132,7 +132,7 @@
 				%>
 				<tr>
 					<td><%= no %></td>
-					<td><a href="/jspT/test2/test02_result.jsp?title=<%= music.get("title") %>"><%= music.get("title") %></a></td>
+					<td><a href="/jspT/test2/test02_result.jsp?id=<%= music.get("id") %>"><%= music.get("title") %></a></td>
 					<td><%= music.get("album")%></td>				
 				</tr>
 				<% } %>
