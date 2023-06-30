@@ -8,7 +8,7 @@
 </head>
 <body>
 <footer>
-			<div class="small text-secondary text-dark">Copyright @ 2021. morandal All Rights Reserved.</div>
+			<div class="d-flex align-items-start small text-secondary text-dark">Copyright @ 2021. morandal All Rights Reserved.</div>
 		</footer>
 </body>
 </html>

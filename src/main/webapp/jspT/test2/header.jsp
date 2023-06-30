@@ -12,12 +12,14 @@
 		<h1 class="text-success">Melong</h1>
 		</div>
 		<div class="search d-flex align-items-center mt-2">
-			<div class="input-group mb-3 col-5">
-		    <input type="text" class="form-control">
+		<form action="/jspT/test2/test02_result.jsp" method="post">
+			<div class="input-group mb-3 col-12">
+		    <input type="text" class="form-control" name="title">
   			<div class="input-group-append">
-   	 		<button class="btn btn-success" type="button">검색</button>
+   	 		<button class="btn btn-success" type="submit">검색</button>
   		</div>
 		</div>
+  		</form>
 		</div>
 		</header>
 </body>

@@ -105,19 +105,36 @@
 	<div id="wrap">		
 		<jsp:include page="header.jsp"/>
 		<jsp:include page="menu.jsp"/>
-		<section class="main-content">
+		<section class="main-content" style="height:400px;">
 			<div class="singer d-flex border border-success p-3">
-			<%= for(Map<String, Object> music: musicList) {
-				String targetTitle = music.get("title");
-				if(targetTitle.equals(title)){
+			<% 
+			for(Map<String, Object> music: musicList) {
+				String targetTitle = (String)music.get("title");
+				if(title.equals(targetTitle)){
 			%>
-			
-				<div><img alt="썸네일" src="<%= musicInfo.get("thumbnail") %>" width="150" ></div>
+				<div><img alt="썸네일" src="<%= music.get("thumbnail") %>" width="150" ></div>
 				<div class="ml-3">
-				<h2><%= musicInfo.get("title")%></h2>
-				<div><%= musicInfo.get("singer")%></div>
-				<div><%= musicInfo.get("album")%></div>
+				<h2><%= music.get("title")%></h2>
+				<div class="text-success font-weight-bold"><%= music.get("singer")%></div>
+					<div class="text-muted mt-3" style="font-size:x-small;">
+						<div>앨범	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("album")%></div>
+						<div>재생 시간	&nbsp;&nbsp;&nbsp;<%= music.get("time")%></div>
+						<div>작곡가&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("composer")%></div>
+						<div>작사가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<%= music.get("lyricist")%></div>
+					</div>
 				</div>
+			</div>
+				<div class="music mt-4">
+			<h3 class="font-weight-bold">가사</h3>
+			<table class="table table-sm text-left">
+				<thead>
+					<tr>
+					<th>가사 정보 없음</th>
+					</tr>
+				</thead>
+				<tbody>	
+				</tbody>
+			</table>
 			</div>
 			<%} }%>
 		</section>
