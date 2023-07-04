@@ -1,0 +1,42 @@
+package com.marondal.database.test;
+
+import java.io.IOException;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.marondal.common.MysqlService;
+
+@WebServlet("/db/url/insert")
+public class Test02InsertController extends HttpServlet{
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String name = request.getParameter("name");
+		String url = request.getParameter("url");
+		
+		MysqlService mysqlService = MysqlService.getInstance();
+		
+		mysqlService.connect();
+		
+		String query = "insert into user_url\r\n"
+				+ "(name, url)\r\n"
+				+ "value\r\n"
+				+ "('" + name + "','" + url + "');";
+		
+		mysqlService.update(query);
+		
+		int count =  mysqlService.update(query);
+		
+//		out.println("추가된 사용자 : " + count);
+	
+		// 리스트 페이지로 이동
+		// Redirect
+		
+		response.sendRedirect("/database/test/test02.jsp");
+
+		
+	}
+}
