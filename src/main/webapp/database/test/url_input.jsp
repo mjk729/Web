@@ -13,11 +13,13 @@
 <body>
 
 	<div class="container">
-		<h1>즐겨찾기 추가</h1>
+		<h1 class="font-weight-bold">즐겨찾기 추가</h1>
 			<form action="/db/url/insert" method="post">
-				<div>
-					<label>사이트명:</label><br><input type = "text" name="name"><br>
-					<label class="mt-3">사이트 주소:</label><br><input type = "text" name="url">
+				<div class="font-weight-bold">
+					<label>사이트명:</label>
+					<input type = "text" name="name" class="form-control col-4">
+					<label class="mt-3">사이트 주소:</label>
+					<input type = "text" name="url" class="form-control col-8">
 				</div>
 				<div>
 					<button  type="submit" class="btn btn-primary mt-3">추가</button>

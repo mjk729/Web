@@ -13,7 +13,9 @@ import com.marondal.common.MysqlService;
 public class Test02DeleteController extends HttpServlet{
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		//	id를 전달 받고, 해당하는 행을 삭제하는 기능
+	
+		// 특정 사이트 삭제
+		// id를 전달 받고, 일치하는 행을 삭제
 		
 		String id = request.getParameter("id");
 		
@@ -24,7 +26,7 @@ public class Test02DeleteController extends HttpServlet{
 		
 		mysqlService.update(query);
 		
-		response.sendRedirect("r/database/test/test02.jsp");
+		response.sendRedirect("/database/test/test02.jsp");
 		
 		
 		

@@ -28,13 +28,6 @@ public class Test02InsertController extends HttpServlet{
 		
 		mysqlService.update(query);
 		
-		int count =  mysqlService.update(query);
-		
-//		out.println("추가된 사용자 : " + count);
-	
-		// 리스트 페이지로 이동
-		// Redirect
-		
 		response.sendRedirect("/database/test/test02.jsp");
 
 		
